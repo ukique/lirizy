@@ -1,0 +1,14 @@
+.home{
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+    min-height: 100vh;
+    width: 100%;
+}
+
+body {
+    background: linear-gradient(135deg, #0d0d0d 0%, #000000 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}

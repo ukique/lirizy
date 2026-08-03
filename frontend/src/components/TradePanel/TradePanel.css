@@ -1,0 +1,214 @@
+.trade-panel-card {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    width: 320px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    background-image: linear-gradient(135deg, #0d0d0d 0%, #000000 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    color: #fff;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-family: sans-serif;
+}
+
+.trade-panel-card h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.side-toggle {
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.side-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.side-btn.active.buy {
+    background: rgba(34, 197, 94, 0.15);
+    color: #86efac;
+    border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.side-btn.active.sell {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.field select,
+.field input {
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field select:focus,
+.field input:focus {
+    border-color: rgba(236, 72, 153, 0.5);
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.12);
+}
+
+/* removes native number-input spinner arrows, kept for any stray type="number" inputs */
+.field input[type="number"]::-webkit-outer-spin-button,
+.field input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.field input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.custom-select {
+    position: relative;
+}
+
+.custom-select-trigger {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-select-trigger:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-select-trigger.open {
+    border-color: rgba(236, 72, 153, 0.5);
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.12);
+}
+
+.custom-select-trigger .chevron {
+    color: #f9a8d4;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.custom-select-trigger.open .chevron {
+    transform: rotate(180deg);
+}
+
+.custom-select-options {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    background: #14141a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.custom-select-option {
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.custom-select-option:hover {
+    background: rgba(236, 72, 153, 0.15);
+}
+
+.custom-select-option.selected {
+    background: rgba(236, 72, 153, 0.2);
+    color: #f9a8d4;
+}
+
+.message {
+    font-size: 13px;
+    margin: 0;
+}
+
+.error-message {
+    color: #fca5a5;
+}
+
+.success-message {
+    color: #86efac;
+}
+
+.trade-btn {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(236, 72, 153, 0.4);
+    border-radius: 12px;
+    background: rgba(236, 72, 153, 0.15);
+    color: #f9a8d4;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: auto;
+}
+
+.trade-btn:hover:not(:disabled) {
+    background: rgba(236, 72, 153, 0.25);
+    border-color: rgba(236, 72, 153, 0.6);
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.25);
+}
+
+.trade-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
