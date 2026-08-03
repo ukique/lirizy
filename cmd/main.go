@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/joho/godotenv"
@@ -30,6 +31,12 @@ func main() {
 	defer pool.Close()
 
 	router := gin.Default()
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:5173"},
+		AllowMethods:     []string{"GET", "POST", "PATCH", "PUT", "DELETE"},
+		AllowHeaders:     []string{"Content-Type"},
+		AllowCredentials: false,
+	}))
 
 	app.Run(pool, router)
 

@@ -3,6 +3,7 @@ module github.com/ukique/lirizy
 go 1.26.3
 
 require (
+	github.com/gin-contrib/cors v1.7.7
 	github.com/gin-gonic/gin v1.12.0
 	github.com/jackc/pgtype v1.14.0
 	github.com/jackc/pgx/v4 v4.18.3
